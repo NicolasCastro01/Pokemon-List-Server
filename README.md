@@ -47,6 +47,7 @@ O Repository Pattern é um padrão de projeto que visa a simplificação de aces
 
 ### Variáveis de ambiente
 - Deve ser preenchido os dados do banco de dados para a devida conexão no arquivo `.env`
+- Há um exemplo do arquivo `.env` chamado `.env.example`.
 
 ### Instalação
 
@@ -62,6 +63,10 @@ $ git clone https://github.com/NicolasCastro01/Pokemon-List-Server.git
 $ cd Pokemon-List-Server
 $ composer update
 $ composer install
+```
+
+### Gerar a chave
+```bash
 $ php artisan key:generate
 ```
 
