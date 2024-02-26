@@ -1,66 +1,104 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">PokeHub | Server</h1>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<p align="center" margin-top="25px" >
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/NicolasCastro01/Pokemon-List-Server?color=purple">
 </p>
 
-## About Laravel
+## Sobre o projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+O intuito do projeto é criar uma aplicação de armazenamento de dados dos pokemons disponibilizados pela [PokeAPI](https://pokeapi.co).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tecnologias e ferramentas utilizadas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [Laravel](https://laravel.com/docs/10.x/)
+- [PHP](https://www.php.net)
+- [PHPUnit](https://phpunit.de)
+- [MySQL](https://www.mysql.com)
 
-## Learning Laravel
+## Arquitetura e padrões de projeto
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+A aplicação foi desenvolvida utilizando os padrões de projeto Clean Architecture e Repository Pattern. A aplicação foi desenvolvida utilizando a arquitetura limpa.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Arquitetura limpa
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+A escolha da arquitetura limpa se deu pela facilidade de manutenção e escalabilidade do projeto. A arquitetura limpa é composta por 3 camadas principais: camada de apresentação, camada de domínio e camada de dados. A camada de apresentação é responsável por toda a parte visual da aplicação, a camada de domínio é responsável por toda a regra de negócio e a camada de dados é responsável por toda a parte de acesso a dados.
 
-## Laravel Sponsors
+### DDD (Domain Driven Design)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+O DDD é um padrão de projeto que visa a separação de responsabilidades entre as camadas da aplicação. O DDD é composto por 4 camadas principais:
 
-### Premium Partners
+- Camada de aplicação: responsável por toda a parte da regra de negócio da aplicação.
+- Camada de domínio: responsável por toda a parte de entidades dando suporte a camada de aplicação.
+- Camada de infraestrutura: responsável por toda a parte de acesso a dados.
+- Camada de apresentação: responsável por toda a parte visual da aplicação.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Repository Pattern
 
-## Contributing
+O Repository Pattern é um padrão de projeto que visa a simplificação de acesso a dados. O Repository Pattern é composto por um arquivo `Repository` que possui todos os método de acesso a dados relacionado aquele contexto. Exemplo: quero acessar dados relacionado a entidade "Pokemon", então crio um arquivo chamado "PokemonRepository". Observação: é importante que todos os métodos do repositório sejam o mais simples possível para evitar o acomplamento.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## Como executar o projeto
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Pré-requisitos
 
-## Security Vulnerabilities
+- [PHP](https://www.php.net)
+- [Composer](https://getcomposer.org/download/)
+- [MySQL](https://www.mysql.com)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Variáveis de ambiente
+- Deve ser preenchido os dados do banco de dados para a devida conexão no arquivo `.env`
 
-## License
+### Instalação
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### Clonar o repositório
+
+```bash
+$ git clone https://github.com/NicolasCastro01/Pokemon-List-Server.git
+```
+
+#### Instalar as dependências
+
+```bash
+$ cd Pokemon-List-Server
+$ composer update
+$ composer install
+$ php artisan key:generate
+```
+
+#### Rodar migrations
+```bash
+$ php artisan migrate
+```
+
+#### Rodar seeders
+- Irá criar a conta: email: "teste@verum.com" e senha: "teste2024".
+```bash
+$ php artisan db:seed
+```
+
+#### Executar o projeto
+
+```bash
+$ php artisan serve --host 0.0.0.0 --port 3001
+```
+
+### Executar os testes
+
+```bash
+$ php artisan test
+```
+
+## Considerações finais
+
+A aplicação contém 2 telas principais que são: a tela de login, onde é possível efetuar a autênticação do usuário e a tela home, onde é possível visualizar os pokemóns armazenados no banco local, buscar novos pokemóns no [PokeAPI](https://pokeapi.co) e importá-los para o banco local.
+A aplicação contém 2 rotas principais que são:
+
+- GET /api/pokemon/all -> Lista todos os pokemons importados do [PokeAPI](https://pokeapi.co) para o banco de dados local.
+- POST /api/pokemon/import -> Importa os dados do pokemón para o banco de dados local.
+  - body: 
+    ```
+    {
+      name: 'charmander',
+      image_url: 'http://localhost/img/charmander_default.png'
+    }
+    ```
